@@ -1,22 +1,41 @@
-name: SteamOS
-category: gaming
-packages:
-  arch:
-    - steam
-    - gamemode
+# MythOS Trait: SteamOS-like Gaming Focus
+# Provides Steam Deck-inspired defaults for gaming systems
+
+name: "SteamOS"
+description: "Gaming-first defaults inspired by Valve's SteamOS"
+
+# Default pillars for this trait
+pillars:
+  gaming:
     - mangohud
-    - lib32-gcc-libs
+    - proton-ge
+    - gamemode
 
-optimizations:
-  sysctl:
-    - vm.swappiness: 10
-    - kernel.sched_migration_cost_ns: 5000000
+# Recommended packages
+packages:
+  pacman:
+    - steam
+    - lutris
+    - wine
+    - winetricks
+    - gamemode
+    - lib32-gamemode
+    - mangohud
+    - lib32-mangohud
   
-  kernel_params:
-    - quiet
-    - splash
-    - threadirqs
+  aur:
+    - proton-ge-custom-bin
 
-verification:
-  - command: steam --version
-  - command: gamemoded --version
+# Performance tweaks
+tweaks:
+  # Use performance governor for CPU
+  cpu_governor: "performance"
+  
+  # Gaming-specific kernel parameters
+  kernel_params:
+    - "split_lock_detect=off"
+    - "mitigations=off"
+  
+  # Compositor optimization
+  compositor_tweaks:
+    - "disable_vsync_when_gaming"
