@@ -14,14 +14,23 @@ bootstrap: true
 # Pillars to provision
 pillars:
   gaming:
+    - steam
     - mangohud
     - proton-ge
+    - lutris
+    - gamemode
   
   developer:
+    - shell
+    - languages
+    - git
+    - neovim
     - distrobox
   
   aesthetic:
     - hyprland
+    - waybar
+    - themes
 
 # Custom package lists (optional, for future expansion)
 packages:
