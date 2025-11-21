@@ -1,11 +1,15 @@
 #!/bin/bash
 set -e
 
-# MythOS Bootstrap — Arch Base System Setup
+# F.O.R.G.E. Bootstrap — Arch Base System Setup
+# Part of: forge-arch
+#
 # This script assumes you're running on a fresh Arch install or post-archinstall
 
-echo "🜁 MythOS Bootstrap — Arch Base System"
-echo "======================================="
+echo "
+🜂 F.O.R.G.E. Bootstrap — Base System
+═══════════════════════════════════════
+"
 
 # Update system
 echo "📦 Updating system packages..."
@@ -27,7 +31,10 @@ sudo pacman -S --needed --noconfirm \
     zip \
     man-db \
     man-pages \
-    rsync
+    rsync \
+    python \
+    python-pip \
+    python-yaml
 
 # Install yay (AUR helper) if not present
 if ! command -v yay &> /dev/null; then
@@ -47,6 +54,7 @@ if ! grep -q "^\[multilib\]" /etc/pacman.conf; then
 fi
 
 # Install common utilities
+# Note: These are current recommendations — alternatives exist for each
 echo "📦 Installing common utilities..."
 sudo pacman -S --needed --noconfirm \
     bash-completion \
@@ -58,18 +66,18 @@ sudo pacman -S --needed --noconfirm \
     fzf \
     stow
 
-# Set up dotfiles directory structure
-echo "📁 Creating dotfiles structure..."
+# Set up directory structure
+echo "📁 Creating directory structure..."
 mkdir -p ~/.config
 mkdir -p ~/repos
 mkdir -p ~/.local/bin
 
 # Basic shell improvements
 echo "🐚 Setting up shell improvements..."
-if ! grep -q "alias ls='eza'" ~/.bashrc 2>/dev/null; then
+if ! grep -q "# F.O.R.G.E. Shell Enhancements" ~/.bashrc 2>/dev/null; then
     cat >> ~/.bashrc << 'EOF'
 
-# MythOS Shell Enhancements
+# F.O.R.G.E. Shell Enhancements
 alias ls='eza --icons'
 alias ll='eza -la --icons'
 alias cat='bat'
@@ -79,5 +87,15 @@ eval "$(zoxide init bash)"
 EOF
 fi
 
-echo "✅ Arch base system bootstrap complete!"
-echo "💡 Next: Run provisioner with --gaming, --dev, or --aesthetic flags"
+echo "
+✅ F.O.R.G.E. Bootstrap Complete!
+═══════════════════════════════════════
+
+Next steps:
+  ./forge.py --gaming      # 🦁 Forge gaming pillar
+  ./forge.py --dev         # 🐍 Forge developer pillar
+  ./forge.py --aesthetic   # 🐐 Forge aesthetic pillar
+  ./forge.py --profile chimera  # Forge all pillars
+
+🜂 Where Chimeras are forged
+"
