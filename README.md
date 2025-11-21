@@ -1,129 +1,131 @@
-# 🏛️ MythOS Linux
+# 🜂 F.O.R.G.E.
 
-> **A curated Arch-based distribution for gaming, development, and aesthetic perfection.**
+> **Framework for Organized and Reproducible Git-tracked Environments**  
+> A metadistribution via provisioning toolkit for Arch Linux
+>
+> *"Where Chimeras are forged"*
 
-MythOS is a modular, reproducible Linux environment that combines:
-- **🎮 Gaming Performance** — CachyOS kernel, Proton, MangoHud, GameMode
-- **💻 Developer Workflow** — Hyprland, modern tooling, containerized dev environments
-- **🎨 Aesthetic Polish** — Catppuccin themes, clean configs, thoughtful defaults
-
-**Philosophy:** Don't reinvent Arch. Curate the best parts of the modern Linux ecosystem.
+[![License](https://img.shields.io/badge/license-Unlicense-blue.svg)](LICENSE)
+[![Arch](https://img.shields.io/badge/provisions-Arch%20Linux-1793D1.svg)](https://archlinux.org/)
+[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/millaez/forge-arch/graphs/commit-activity)
 
 ---
 
-## ✨ Features
+## What is F.O.R.G.E.?
 
-### 🎮 Gaming Pillar
-- **Steam & Proton** — Gaming out-of-the-box with Steam Play enabled
-- **Performance Tools** — MangoHud for monitoring, GameMode for optimization
-- **Proton-GE** — Latest compatibility layer for Windows games
-- **Lutris** — Universal game launcher for all platforms
-- **GPU Optimized** — Pre-configured for NVIDIA, AMD, and Intel graphics
+**F.O.R.G.E. is NOT a Linux distribution.** It is a **metadistribution**—a provisioning toolkit that transforms existing Arch Linux installations into Chimeras: three-natured environments optimized for gaming, development, and aesthetics.
 
-### 💻 Developer Pillar
-- **Hyprland** — Modern Wayland compositor with tiling workflow
-- **Distrobox/Podman** — Containerized development environments
-- **Modern Shell** — Starship prompt, zoxide, fzf, bat, eza
-- **Language Toolchains** — Python, Rust, Node.js, Go pre-installed
-- **Neovim Ready** — Configured editor with LSP support
+### The Chimera: Three Pillars, One System
 
-### 🎨 Aesthetic Pillar
-- **Catppuccin Theme** — Mocha palette across all applications
-- **Waybar** — Beautiful status bar with system monitoring
-- **Wofi** — App launcher styled to match
-- **JetBrains Mono** — Nerd Font for perfect icon rendering
-- **Consistent Design** — Every tool follows the same aesthetic
+| Pillar | Symbol | Domain |
+|--------|--------|--------|
+| **🦁 Lion** | Gaming | Performance, optimization, play |
+| **🐍 Serpent** | Developer | Tools, workflow, productivity |
+| **🐐 Goat** | Aesthetic | Beauty, polish, consistency |
+
+### Metadistribution Approach
+
+F.O.R.G.E. doesn't replace Arch—it provisions it:
+
+- ❌ No custom ISO to download
+- ❌ No forked packages or repositories
+- ✅ Scripted provisioning of vanilla Arch
+- ✅ Git-tracked, reproducible configuration
+- ✅ Modular pillars you choose
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Fresh Arch Linux install (or existing Arch system)
-- Internet connection
-- `git` installed
 
-### One-Line Install
+- **Existing Arch Linux installation** (fresh or established)
+- Internet connection
+- Basic terminal knowledge
+
+> **Note:** F.O.R.G.E. does NOT provide an ISO. Install Arch Linux first using [archinstall](https://wiki.archlinux.org/title/Archinstall) or the [installation guide](https://wiki.archlinux.org/title/Installation_guide).
+
+### Forge Your Chimera
 
 ```bash
-git clone https://github.com/millaez/mythos-linux.git
-cd mythos-linux
-./provisioner.py --profile atlas
+# Clone the forge
+git clone https://github.com/millaez/forge-arch.git
+cd forge-arch
+
+# Forge a complete Chimera (all three pillars)
+./forge.py --profile chimera
 ```
 
-This will:
-1. Bootstrap the base Arch system
-2. Install gaming stack (Steam, MangoHud, Proton-GE)
-3. Set up developer tools (Hyprland, Distrobox, languages)
-4. Apply aesthetic configuration (themes, fonts, Waybar)
+### Modular Provisioning
 
-### Modular Installation
-
-You can also install individual pillars:
+Forge only what you need:
 
 ```bash
-# Just the base system
-./provisioner.py --bootstrap
+# Base system only
+./forge.py --bootstrap
 
-# Add gaming support
-./provisioner.py --gaming
+# Individual pillars (technical flags)
+./forge.py --gaming         # 🦁 Lion
+./forge.py --dev            # 🐍 Serpent
+./forge.py --aesthetic      # 🐐 Goat
 
-# Add developer tools
-./provisioner.py --dev
+# Or use mythological aliases
+./forge.py --lion
+./forge.py --serpent
+./forge.py --goat
 
-# Add aesthetic configuration
-./provisioner.py --aesthetic
+# Combine pillars
+./forge.py --gaming --aesthetic
 ```
 
 ---
 
-## 📁 Repository Structure
+## 📁 Project Structure
 
 ```
-mythos-linux/
-├── bootstrap/          # Base Arch system setup
+forge-arch/
+├── forge.py                # Main provisioner
+├── bootstrap/              # Base system setup
 │   └── arch.sh
-├── pillars/            # Modular feature sets
-│   ├── gaming/         # Steam, MangoHud, Proton-GE
-│   ├── developer/      # Shell, languages, containers
-│   └── aesthetic/      # Hyprland, Waybar, themes
-├── profiles/           # Pre-configured system profiles
-│   └── atlas.yaml      # Full-featured workstation
-├── traits/             # Reusable behavior sets
-│   └── steamos.yaml    # SteamOS-like gaming defaults
-├── core/               # Python orchestration
-│   └── themes/         # Theme management system
-└── provisioner.py      # Main installation script
+├── pillars/                # Modular features
+│   ├── gaming/             # 🦁 Lion — Performance & play
+│   ├── developer/          # 🐍 Serpent — Tools & workflow
+│   └── aesthetic/          # 🐐 Goat — Beauty & polish
+├── profiles/               # Pre-configured setups
+│   ├── chimera.yaml        # Full three-pillar default
+│   ├── lion.yaml           # Gaming-focused
+│   ├── serpent.yaml        # Developer-focused
+│   └── goat.yaml           # Aesthetic-focused
+├── traits/                 # Reusable behaviors
+└── core/                   # Python orchestration
 ```
 
 ---
 
 ## 🎯 Profiles
 
-### ATLAS (Default)
-Full-featured workstation with gaming, development, and aesthetic polish.
+### Chimera (Default)
+
+The complete three-natured beast with all pillars:
 
 ```bash
-./provisioner.py --profile atlas
+./forge.py --profile chimera
 ```
 
-**Includes:**
-- Gaming: Steam, Lutris, MangoHud, Proton-GE
-- Development: Hyprland, Distrobox, Python/Rust/Node/Go
-- Aesthetic: Catppuccin theme, Waybar, JetBrains Mono
-- Applications: Firefox, Discord, OBS Studio
+### Single-Pillar Profiles
 
-### Create Your Own Profile
+```bash
+./forge.py --profile lion      # Gaming only
+./forge.py --profile serpent   # Developer only
+./forge.py --profile goat      # Aesthetic only
+```
+
+### Create Your Own
 
 ```yaml
-# profiles/myprofile.yaml
-name: "MyProfile"
-description: "Custom MythOS setup"
-
-traits:
-  - steamos
-
-bootstrap: true
+# profiles/custom.yaml
+name: "Custom"
+description: "My personalized Chimera"
 
 pillars:
   gaming:
@@ -131,121 +133,127 @@ pillars:
     - mangohud
   developer:
     - shell
-    - distrobox
+    - git
   aesthetic:
     - hyprland
-
-theme:
-  style: "catppuccin-mocha"
-  font: "JetBrains Mono"
 ```
 
 ---
 
-## 🔧 System Requirements
+## ✨ Features
+
+### 🦁 Lion Pillar (Gaming)
+
+- **Performance Kernel** — CachyOS with BORE scheduler
+- **GPU Auto-Detection** — NVIDIA, AMD, or Intel drivers
+- **Gaming Stack** — Steam, Lutris, Proton-GE, MangoHud, GameMode
+- **Optimizations** — CPU governor, kernel parameters, compositor tweaks
+
+### 🐍 Serpent Pillar (Developer)
+
+- **Modern Shell** — Starship prompt, zoxide, fzf, modern CLI tools
+- **Editor Setup** — Neovim with LSP (or alternatives)
+- **Language Toolchains** — Python, Rust, Node.js, Go
+- **Containers** — Distrobox + Podman for isolated environments
+- **Version Control** — Git with delta, lazygit
+
+### 🐐 Goat Pillar (Aesthetic)
+
+- **Compositor** — Hyprland (Wayland) or alternatives
+- **System Theme** — Catppuccin (default) or alternatives
+- **UI Components** — Waybar, Wofi, Dunst
+- **Fonts** — JetBrains Mono Nerd Font, quality typography
+- **Consistency** — GTK, Qt, terminals all themed
+
+---
+
+## 🔧 Design Philosophy
+
+### Categories Over Apps
+
+F.O.R.G.E. recommends **tool categories**, not specific applications:
+
+| Category | Default | Alternatives |
+|----------|---------|--------------|
+| Terminal | Alacritty | Kitty, WezTerm, Foot |
+| Editor | Neovim | VS Code, Helix, Vim |
+| Compositor | Hyprland | Sway, i3, Niri |
+| Theme | Catppuccin | Nord, Dracula, Gruvbox |
+
+Defaults are **suggestions**, not requirements. Swap freely.
+
+### Reproducibility First
+
+Every F.O.R.G.E. provisioning is:
+
+- **Scriptable** — No manual steps required
+- **Idempotent** — Safe to re-run
+- **Git-tracked** — Version controlled configs
+- **Documented** — Every script explains itself
+
+---
+
+## 🛠️ System Requirements
 
 ### Minimum
+
+- **Base:** Arch Linux installation
 - **CPU:** x86_64 processor
 - **RAM:** 4GB (8GB recommended)
 - **Storage:** 30GB free space
-- **GPU:** Any (NVIDIA/AMD/Intel)
 
 ### Recommended
-- **CPU:** Modern multi-core processor
+
+- **CPU:** Modern multi-core (4+ cores)
 - **RAM:** 16GB+
-- **Storage:** 100GB+ SSD
-- **GPU:** Dedicated NVIDIA/AMD card
-
----
-
-## 🛠️ Customization
-
-### Gaming Tweaks
-
-```bash
-# Add custom Steam library location
-mkdir -p ~/Games/SteamLibrary
-
-# Configure MangoHud
-nano ~/.config/MangoHud/MangoHud.conf
-
-# Install additional compatibility tools
-yay -S proton-ge-custom-bin
-```
-
-### Developer Environment
-
-```bash
-# Install additional languages
-./pillars/developer/languages.sh
-
-# Set up containerized environment
-./pillars/developer/distrobox.sh
-
-# Customize shell prompt
-nano ~/.config/starship.toml
-```
-
-### Aesthetic Changes
-
-```bash
-# Switch to Nord theme
-# (Theme manager coming soon)
-
-# Customize Hyprland
-nano ~/.config/hypr/hyprland.conf
-
-# Adjust Waybar
-nano ~/.config/waybar/config
-```
-
----
-
-## 🌟 Inspiration
-
-MythOS draws inspiration from:
-- **SteamOS** — Gaming-first approach
-- **Bazzite** — Performance optimizations
-- **NixOS** — Reproducibility philosophy
-- **elementary OS** — Aesthetic consistency
-- **Fedora** — Modern toolchain
+- **Storage:** 100GB+ NVMe SSD
+- **GPU:** Dedicated NVIDIA or AMD
 
 ---
 
 ## 📚 Documentation
 
---- (not yet)
+- [Installation Guide](docs/installation.md)
+- [Gaming Setup](docs/gaming.md)
+- [Developer Workflow](docs/development.md)
+- [Customization](docs/customization.md)
+- [Troubleshooting](docs/troubleshooting.md)
+
+---
 
 ## 🤝 Contributing
 
-Contributions welcome! Please:
-1. Fork the repository
-2. Create a feature branch
-3. Submit a pull request
+Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+### Ways to Contribute
+
+- 🐛 Report bugs and issues
+- 💡 Suggest improvements
+- 📝 Improve documentation
+- 🔧 Add pillar scripts
+- ⭐ Star the repository
 
 ---
 
 ## 📜 License
 
-Public Domain
+**Unlicense (Public Domain)** — See [LICENSE](LICENSE)
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Arch Linux** community for the solid foundation
-- **CachyOS** team for performance kernels
-- **Catppuccin** for the beautiful theme
-- **Hyprland** developers for the excellent compositor
-- All the open-source projects that make MythOS possible
+- **Arch Linux** — The foundation
+- **CachyOS** — Performance kernels
+- **Catppuccin** — Beautiful theming
+- **Hyprland** — Excellent compositor
+- All open-source projects that make F.O.R.G.E. possible
 
 ---
 
-## 📬 Contact
-
-- **GitHub:** [@millaez](https://github.com/millaez)
-- **Repository:** [mythos-linux](https://github.com/millaez/mythos-linux)
-
----
-
-**Built with ❤️ for gamers and developers who refuse to compromise.**
+<p align="center">
+  <strong>🜂 F.O.R.G.E.</strong><br>
+  <em>Framework for Organized and Reproducible Git-tracked Environments</em><br><br>
+  🦁 Gaming &nbsp;│&nbsp; 🐍 Developer &nbsp;│&nbsp; 🐐 Aesthetic<br><br>
+  <strong>"Where Chimeras are forged"</strong>
+</p>
